@@ -28,3 +28,5 @@ jane.calculateAge();
 
 console.log(john.lastName);
 
+// console.info(some object)
+// will give you methods of and properties (prototype chain)
