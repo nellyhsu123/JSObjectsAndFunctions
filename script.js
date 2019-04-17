@@ -245,14 +245,85 @@ console.log(fullJapan);
 */
 
 /**********************
- *Coding Challenge 7
+ *Coding Challenge 7 part 1
+ 
+
+(function() {
+	var Question = function(question, answers, cAnswer) {
+	this.question = question;
+	this.answers = answers;
+	this.cAnswer = cAnswer;
+	}
+
+	Question.prototype.display = function() {
+		console.log(this.question);
+		for(var i = 0; i < this.answers.length; ++i) {
+			console.log(this.answers[i]);
+		}
+	}
+
+	Question.prototype.checkAnswer = function(ans) {
+		if(ans === this.cAnswer) {
+			console.log('Correct answer!');
+		} else {
+			console.log('Wrong answer :(');
+		}
+	}
+
+	var q1 = new Question('Who were the 2017 NBA Champs?', ['GSW', 'CLE', 'BOS'], 0);
+	var q2 = new Question('Who won the superbowl in 1995?', ['DAL', 'SF', 'NE'], 1);
+
+	var questions = [q1, q2];
+
+	var questionSelector = Math.floor(Math.random() * questions.length);
+
+	questions[questionSelector].display();
+
+	var answer = parseInt(prompt('Please select the correct answer.'));
+
+	questions[questionSelector].checkAnswer(answer);
+})();
+*/
+
+/**********************
+ *Coding Challenge 7 part 2
  */
 
-var Question = function(question, answers, cAnswer) {
+(function() {
+	var Question = function(question, answers, cAnswer) {
+	this.question = question;
+	this.answers = answers;
+	this.cAnswer = cAnswer;
+	}
 
-}
+	Question.prototype.display = function() {
+		console.log(this.question);
+		for(var i = 0; i < this.answers.length; ++i) {
+			console.log(this.answers[i]);
+		}
+	}
 
+	Question.prototype.checkAnswer = function(ans) {
+		if(ans === this.cAnswer) {
+			console.log('Correct answer!');
+		} else {
+			console.log('Wrong answer :(');
+		}
+	}
 
+	var q1 = new Question('Who were the 2017 NBA Champs?', ['GSW', 'CLE', 'BOS'], 0);
+	var q2 = new Question('Who won the superbowl in 1995?', ['DAL', 'SF', 'NE'], 1);
+
+	var questions = [q1, q2];
+
+	var questionSelector = Math.floor(Math.random() * questions.length);
+
+	questions[questionSelector].display();
+
+	var answer = parseInt(prompt('Please select the correct answer.'));
+
+	questions[questionSelector].checkAnswer(answer);
+})();
 
 
 
