@@ -316,13 +316,23 @@ console.log(fullJapan);
 
 	var questions = [q1, q2];
 
-	var questionSelector = Math.floor(Math.random() * questions.length);
+	function nextQuestion() {
+	
+		var questionSelector = Math.floor(Math.random() * questions.length);
 
-	questions[questionSelector].display();
+		questions[questionSelector].display();
 
-	var answer = parseInt(prompt('Please select the correct answer.'));
+		var answer = prompt('Please select the correct answer.');
 
-	questions[questionSelector].checkAnswer(answer);
+		if(answer !== 'exit') {
+			questions[questionSelector].checkAnswer(parseInt(answer));
+			nextQuestion();
+		}
+		
+	}
+
+	nextQuestion();
+	
 })();
 
 
